@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChessChest</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Добро пожаловать в ChessChest!</h1>
+        <button id="startButton">Начать обучение</button>
+    </div>
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Раскрываем Web App на весь экран
+
+        document.getElementById("startButton").addEventListener("click", function() {
+            tg.sendData("start_learning"); // Отправляем событие боту
+        });
+    </script>
+</body>
+</html>
